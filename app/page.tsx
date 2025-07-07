@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import CryptoQuiz from "./crypto-quiz/page"
+import { useRouter } from 'next/navigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   BookOpen,
@@ -20,6 +22,8 @@ import {
   Zap,
   Users,
 } from "lucide-react"
+import router from "next/router"
+
 
 const courses = [
   {
@@ -194,6 +198,7 @@ export default function CryptoLearningHub() {
                 animated explainers designed for complete beginners.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/cryptoquiz" >
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-3"
@@ -201,14 +206,18 @@ export default function CryptoLearningHub() {
                   <Play className="w-5 h-5 mr-2" />
                   Start Learning
                 </Button>
+                </a>
+                <a href="/crypto-quiz" >
                 <Button
                   size="lg"
                   variant="outline"
+                  // onClick={() => router.push('crypto-quiz')}
                   className="border-purple-400 text-purple-200 hover:bg-purple-500/10 bg-transparent"
                 >
                   <Brain className="w-5 h-5 mr-2" />
                   Take Quiz
                 </Button>
+                </a>
               </div>
             </div>
           </div>
